@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Phone Dial</string>
+    <string name="btn_text">Enter</string>
+    <string name="Dial">Dial</string>
+</resources>
