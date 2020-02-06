@@ -2,4 +2,12 @@
     <string name="app_name">Phone Dial</string>
     <string name="btn_text">Enter</string>
     <string name="Dial">Dial</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text">Welcome to Phone Dial</string>
+    <string name="start">start</string>
+    <string name="enter_phone">Enter Phone Number</string>
+    <string name="next">next</string>
+    <string name="dial">dial</string>
 </resources>

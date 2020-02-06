@@ -7,26 +7,25 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import es.dmoral.toasty.Toasty
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //Toasty.Config.getInstance().apply()
 
-        val editText : EditText = findViewById(R.id.edit_number)
+        navController = this.findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)
+    }
 
-        val btn : Button = findViewById(R.id.enter_btn)
-        btn.setOnClickListener {
-            val numString: Int = editText.text.toString().toInt()
-            val intent = Intent(this, Dial::class.java)
-            intent.putExtra("number", numString)
-            Toasty.success(this, "Welcome! Get ready to dial!", Toast.LENGTH_SHORT, false).show();
-            startActivity(intent)
-        }
-
+    override fun onSupportNavigateUp(): Boolean {
+        navController.navigateUp()
+        return super.onSupportNavigateUp()
     }
 }

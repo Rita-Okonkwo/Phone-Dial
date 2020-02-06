@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.project.phonedial.WelcomeFragment"
+        android:label="Phone Dial"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_insertFragment"
+            app:destination="@id/insertFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertFragment"
+        android:name="com.project.phonedial.InsertFragment"
+        android:label="Phone Dial"
+        tools:layout="@layout/fragment_insert">
+        <action
+            android:id="@+id/action_insertFragment_to_dialFragment"
+            app:destination="@id/dialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dialFragment"
+        android:name="com.project.phonedial.DialFragment"
+        android:label="Phone Dial"
+        tools:layout="@layout/fragment_dial" >
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+    </fragment>
+</navigation>
